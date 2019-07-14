@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="XamApp.Views.CalculatorView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    
+    <StackLayout
+        Margin="5"
+        HorizontalOptions="Center"
+        Orientation="Vertical"
+        VerticalOptions="Center">
+        <Frame CornerRadius="10" BackgroundColor="Thistle">
+      <StackLayout Spacing="5" Margin="20">
+          <Grid ColumnSpacing="5" RowSpacing="5" >
+              <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="Auto"></ColumnDefinition>
+                  <ColumnDefinition Width="Auto"></ColumnDefinition>
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                  <RowDefinition Height="Auto"></RowDefinition>
+                  <RowDefinition Height="Auto"></RowDefinition>
+                  <RowDefinition Height="Auto"></RowDefinition>
+               </Grid.RowDefinitions>
+                    <Label Text="Number 1: " VerticalOptions="Center" Grid.Column="0" Grid.Row="0"></Label>
+                    <Label Text="Number 2: " VerticalOptions="Center" Grid.Column="0" Grid.Row="1"></Label>
+                    <Label Text="Answer: " VerticalOptions="Center" Grid.Column="0" Grid.Row="2"></Label>
+                    <Frame BorderColor="SlateBlue" CornerRadius="10" VerticalOptions="Center" Grid.Column="1" Grid.Row="0" >
+                  <Entry WidthRequest="150" Text="{Binding Number1}" Keyboard="Numeric"></Entry>
+              </Frame>
+                    <Frame BorderColor="SlateBlue" CornerRadius="10" VerticalOptions="Center" Grid.Column="1" Grid.Row="1" >
+                    <Entry WidthRequest="150" Text="{Binding Number2}" Keyboard="Numeric"></Entry>
+              </Frame>
+                    <Frame BorderColor="SlateBlue" CornerRadius="10" VerticalOptions="Center" Grid.Column="1" Grid.Row="2" >
+                    <Label WidthRequest="150" HeightRequest="30" Text="{Binding Answer}" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"></Label>
+              </Frame>
+           </Grid>
+
+          <Grid ColumnSpacing="5">
+              <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+                        <ColumnDefinition Width="50"></ColumnDefinition>
+               </Grid.ColumnDefinitions>
+
+              <Frame Grid.Column="0" CornerRadius="10" BorderColor="SlateBlue" BackgroundColor="White" >
+                        <Button Text="+" 
+                                VerticalOptions="Center" 
+                                HorizontalOptions="Center" 
+                                BackgroundColor="Transparent"
+                                Command="{Binding DoSumCommand}"></Button>
+              </Frame>
+              <Frame Grid.Column="1" CornerRadius="10" BorderColor="SlateBlue" BackgroundColor="White">
+                        <Button Text="-" 
+                                VerticalOptions="Center" 
+                                HorizontalOptions="Center" 
+                                BackgroundColor="Transparent"
+                                Command="{Binding DoSubtractionCommand}"></Button>
+              </Frame>
+              <Frame Grid.Column="2" CornerRadius="10" BorderColor="SlateBlue" BackgroundColor="White">
+                        <Button Text="*" 
+                                VerticalOptions="Center" 
+                                HorizontalOptions="Center" 
+                                BackgroundColor="Transparent"
+                                Command="{Binding DoMultiplicationCommand}"></Button>
+              </Frame>
+              <Frame Grid.Column="3" CornerRadius="10" 
+                     BorderColor="SlateBlue" BackgroundColor="White" >
+                        <Button Text="/" 
+                                VerticalOptions="Center" 
+                                HorizontalOptions="Center" 
+                                BackgroundColor="Transparent"
+                                Command="{Binding DoDivisionCommand}"></Button>
+              </Frame>
+                </Grid>
+            </StackLayout> 
+        </Frame>
+       
+    </StackLayout>
+  
+</ContentPage>
